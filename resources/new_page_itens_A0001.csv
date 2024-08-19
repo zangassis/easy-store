@@ -1,6 +1,6 @@
-Id,Name,Description,Price,PictureFileName,CatalogTypeId,CatalogBrandId,AvailableStock,RestockThreshold,MaxStockThreshold,OnReorder
-A0000001,Alpha Phone X,"High-performance smartphone with 128GB storage, powerful chipset, and 5G support.",799.99,alphaphonex.jpg,1,201,50,5,200,false
-A0000002,Galaxy Star Z,"Premium smartphone featuring 128GB storage, advanced display technology, and excellent battery life.",699.99,galaxystarz.jpg,1,202,75,10,150,false
-A0000003,QuietSound Pro,"Noise-canceling wireless headphones with superior sound quality and 30 hours of battery life.",349.99,quietsoundpro.jpg,2,203,100,20,300,false
-A0000004,ZBook 13,"Compact laptop with a powerful processor, 16GB RAM, and 512GB SSD, designed for professionals.",1199.99,zbook13.jpg,3,204,25,5,100,false
-A0000005,SpeedRunner 300,"High-performance running shoes with enhanced cushioning and support for long-distance running.",150.00,speedrunner300.jpg,4,205,200,50,500,false
+Id,Title,Description,ImageUrl,AdditionalInfo,PublishedDate,IsPublished
+P0001,"Wireless Headphones","High-quality wireless headphones with noise-cancellation feature.","https://example.com/images/headphones.jpg","Battery life: 20 hours",2024-08-01,true
+P0002,"4K Ultra HD Smart TV","55-inch 4K Ultra HD Smart TV with built-in streaming services.","https://example.com/images/tv.jpg","Includes HDMI cable",2024-07-15,true
+P0003,"Electric Scooter","Foldable electric scooter with a top speed of 25 km/h.","https://example.com/images/scooter.jpg","Max load: 120 kg",2024-07-10,true
+P0004,"Fitness Tracker","Waterproof fitness tracker with heart rate monitor.","https://example.com/images/fitnesstracker.jpg","Compatible with iOS and Android",2024-07-20,false
+P0005,"Smart Home Speaker","Voice-controlled smart speaker with integrated assistant.","https://example.com/images/smartspeaker.jpg","Supports multiple languages",2024-08-05,true

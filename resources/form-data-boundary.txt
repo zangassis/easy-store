@@ -1,0 +1,7 @@
+--yourBoundary
+Content-Disposition: form-data; name="file"; filename="yourfile.txt"
+Content-Type: text/plain
+
+Id,Title,Description,ImageUrl,AdditionalInfo,PublishedDate,IsPublished
+P0006,"Wireless Headphones test","High-quality wireless headphones with noise-cancellation feature.","https://example.com/images/headphones.jpg","Battery life: 20 hours",2024-08-01,true
+--yourBoundary--
