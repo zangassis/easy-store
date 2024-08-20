@@ -9,11 +9,17 @@ builder.Services.AddControllers();
 
 builder.Services.AddSingleton(s =>
 {
-    var cosmosClient = new CosmosClient(builder.Configuration["CosmosDb:Account"], builder.Configuration["CosmosDb:Key"]);
+    var cosmosClient = new CosmosClient(
+        builder.Configuration["CosmosDb:Account"],
+        builder.Configuration["CosmosDb:Key"]);
 
-    return new CatalogService(cosmosClient, 
-        builder.Configuration["CosmosDb:DatabaseName"], 
-        builder.Configuration["CosmosDb:ContainerName"]);
+    var logger = s.GetRequiredService<ILogger<CatalogService>>();
+
+    return new CatalogService(
+        cosmosClient,
+        builder.Configuration["CosmosDb:DatabaseName"],
+        builder.Configuration["CosmosDb:ContainerName"],
+        logger);
 });
 
 var app = builder.Build();

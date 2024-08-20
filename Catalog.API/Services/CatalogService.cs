@@ -5,10 +5,12 @@ namespace Catalog.API.Services;
 public class CatalogService
 {
     private readonly Container _container;
+    private readonly ILogger<CatalogService> _logger;
 
-    public CatalogService(CosmosClient cosmosClient, string databaseName, string containerName)
+    public CatalogService(CosmosClient cosmosClient, string databaseName, string containerName, ILogger<CatalogService> logger)
     {
         _container = cosmosClient.GetContainer(databaseName, containerName);
+        _logger = logger;
     }
 
     public async Task AddProductPage(ProductPage item)
@@ -21,16 +23,16 @@ public class CatalogService
         }
         catch (CosmosException ex)
         {
-            Console.WriteLine($"CosmosDB Error: {ex.StatusCode} - {ex.Message}");
-            Console.WriteLine($"ActivityId: {ex.ActivityId}");
+            _logger.LogError($"CosmosDB Error: {ex.StatusCode} - {ex.Message}");
+            _logger.LogError($"ActivityId: {ex.ActivityId}");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Unexpected Error: {ex.Message}");
+            _logger.LogError($"Unexpected Error: {ex.Message}");
         }
     }
 
-    public async Task<ProductPage> GetProductPage(string id)
+    public async Task<ProductPage?> GetProductPage(string id)
     {
         try
         {

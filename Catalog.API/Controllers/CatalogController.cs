@@ -17,7 +17,7 @@ public class CatalogController : ControllerBase
         _catalogService = catalogService;
     }
 
-    [HttpPost("upload")]
+    [HttpPost("/product-page/upload")]
     public async Task<IActionResult> UploadProductPages([FromForm] IFormFile file)
     {
         if (file == null || file.Length == 0)
@@ -35,7 +35,7 @@ public class CatalogController : ControllerBase
         return Ok("Product pages have been uploaded and saved to the database.");
     }
 
-    [HttpGet]
+    [HttpGet("/product-page")]
     public async Task<ActionResult<IEnumerable<ProductPage>>> GetProductPage([FromQuery] string id)
     {
         var productPage = await _catalogService.GetProductPage(id);
