@@ -13,13 +13,13 @@ public class CatalogService
         _logger = logger;
     }
 
-    public async Task AddProductPage(ProductPage item)
+    public async Task AddProductPage(ProductPage productPage)
     {
         try
         {
-            var partitionKey = new PartitionKey(item.Id);
+            var partitionKey = new PartitionKey(productPage.Id);
 
-            await _container.UpsertItemAsync(item, partitionKey);
+            await _container.UpsertItemAsync(productPage, partitionKey);
         }
         catch (CosmosException ex)
         {
